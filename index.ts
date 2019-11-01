@@ -1,4 +1,4 @@
-import Vue, { VueConstructor } from 'vue'
+import { VueConstructor } from 'vue'
 
 interface State {
   [x: string]: any;
