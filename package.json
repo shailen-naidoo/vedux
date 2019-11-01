@@ -1,14 +1,16 @@
 {
-  "name": "vedux",
+  "name": "veduxjs",
   "version": "0.0.1",
   "main": "index.js",
   "repository": "git@github.com:ShailenNaidoo/vedux.git",
   "author": "shailen <shailen@lumkani.com>",
   "license": "MIT",
   "dependencies": {
-    "typescript": "^3.6.4"
+    "typescript": "^3.6.4",
+    "vue": "^2.6.10"
   },
   "devDependencies": {
-    "@types/node": "^12.12.5"
+    "@types/node": "^12.12.5",
+    "@types/vue": "^2.0.0"
   }
 }

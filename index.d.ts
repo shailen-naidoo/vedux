@@ -9,6 +9,9 @@ declare class Store {
 }
 declare const _default: {
     Store: typeof Store;
+    Vedux: {
+        install(vue: any): void;
+    };
 };
 export default _default;
 //# sourceMappingURL=index.d.ts.map

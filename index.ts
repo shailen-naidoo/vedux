@@ -1,3 +1,5 @@
+import Vue, { VueConstructor } from 'vue'
+
 interface State {
   [x: string]: any;
 }
@@ -26,4 +28,19 @@ class Store {
   }
 }
 
-export default { Store }
+const Vedux = {
+  install(vue: VueConstructor) {
+    vue.mixin({
+      beforeCreate() {
+        // @ts-ignore
+        const { store } = this.$options
+        
+        this.$options.data = {
+          store
+        }
+      }
+    })
+  }
+}
+
+export default { Store, Vedux }

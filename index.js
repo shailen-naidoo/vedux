@@ -28,5 +28,17 @@ var Store = /** @class */ (function () {
     };
     return Store;
 }());
-exports.default = { Store: Store };
+var Vedux = {
+    install: function (vue) {
+        vue.mixin({
+            beforeCreate: function () {
+                var store = this.$options.store;
+                this.$options.data = {
+                    store: store
+                };
+            }
+        });
+    }
+};
+exports.default = { Store: Store, Vedux: Vedux };
 //# sourceMappingURL=index.js.map
