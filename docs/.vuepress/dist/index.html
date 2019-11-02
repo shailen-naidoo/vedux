@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vedux</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.8bcf7c97.css" as="style"><link rel="preload" href="/assets/js/app.af381578.js" as="script"><link rel="preload" href="/assets/js/2.0317e6ec.js" as="script"><link rel="preload" href="/assets/js/5.795390b6.js" as="script"><link rel="prefetch" href="/assets/js/3.213cd3c0.js"><link rel="prefetch" href="/assets/js/4.971fb7ff.js"><link rel="prefetch" href="/assets/js/6.b71de841.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.8bcf7c97.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-exact-active router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vedux"><a href="#vedux" class="header-anchor">#</a> Vedux</h1> <p>A ultra-lightweight state management library for Vue.js, it just does enough to help you manage state without locking you in. The issue with Vuex is that it's hard not to put your business logic into it so if you wanted to changed framework your business logic ends up stuck in there with all the conventions of Vuex.</p> <p>Vedux is meant to be an alternative to that as there is no such thing as <code>actions</code>, <code>mutations</code> or <code>getters</code>, you only have <code>state</code> that only gets mutated/accessed via the <code>commit()</code> and <code>getState()</code> functions. That's about it 😃</p> <p>You have full control over your state!</p> <blockquote><p>NOTE: This is just an experiment 😃</p></blockquote> <h3 id="installation"><a href="#installation" class="header-anchor">#</a> Installation</h3> <div class="language-shell extra-class"><pre class="language-text"><code>$ yarn add veduxjs
+</code></pre></div><div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Vedux<span class="token punctuation">,</span> Store <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'veduxjs'</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Vedux<span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Store</span><span class="token punctuation">(</span><span class="token punctuation">{</span> 
+  counter<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> 
+  form<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    email<span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  store<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span>
+
+</code></pre></div><h3 id="setup"><a href="#setup" class="header-anchor">#</a> Setup</h3> <p>After you have setup your <code>store</code>, you now have access to 4 methods:</p> <ul><li><code>getState()</code> - Clones and returns the current instance of the <code>state</code></li> <li><code>commit()</code> - Creates and returns a new instance of the state with your new values</li> <li><code>module()</code> - Allows you to create a module from a property on the state</li> <li><code>subscribe()</code> - You can observe changes in the state</li></ul> <h4 id="getstate"><a href="#getstate" class="header-anchor">#</a> <code>getState()</code></h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> cloneOfTheState <span class="token operator">=</span> store<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// cloneOfTheState: { counter: 0, form: { email: null, name: null } }</span>
+
+<span class="token keyword">const</span> cloneOfTheState <span class="token operator">=</span> store<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token string">'form'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// cloneOfTheState: { email: null, name: null }</span>
+
+<span class="token keyword">const</span> cloneOfTheState <span class="token operator">=</span> store<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token string">'form.email'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// cloneOfTheState: null</span>
+</code></pre></div><h4 id="commit"><a href="#commit" class="header-anchor">#</a> <code>commit()</code></h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> <span class="token punctuation">{</span> counter<span class="token punctuation">:</span> currentCounter <span class="token punctuation">}</span> <span class="token operator">=</span> store<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// currentCounter: 0</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span> counter<span class="token punctuation">:</span> newCounter <span class="token punctuation">}</span> <span class="token operator">=</span> store<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> counter <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> 
+  counter<span class="token punctuation">:</span> counter <span class="token operator">+</span> <span class="token number">5</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// newCounter: 5</span>
+</code></pre></div><h4 id="module"><a href="#module" class="header-anchor">#</a> <code>module()</code></h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> counterModule <span class="token operator">=</span> store<span class="token punctuation">.</span><span class="token function">module</span><span class="token punctuation">(</span><span class="token string">'counter'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span> counter <span class="token punctuation">}</span> <span class="token operator">=</span> counterModule<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> counter <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> counter <span class="token operator">+</span> <span class="token number">5</span><span class="token punctuation">)</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>counter<span class="token punctuation">)</span> <span class="token comment">// 5</span>
+</code></pre></div><h4 id="subscribe"><a href="#subscribe" class="header-anchor">#</a> <code>subscribe()</code></h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code>store<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> oldState<span class="token punctuation">,</span> newState <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>oldState<span class="token punctuation">,</span> newState<span class="token punctuation">)</span>
+  <span class="token comment">// oldState: { counter: 0 }</span>
+  <span class="token comment">// newState: { counter: 10 }</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+store<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> counter<span class="token punctuation">:</span> <span class="token number">10</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="using-it-with-vue-components"><a href="#using-it-with-vue-components" class="header-anchor">#</a> Using it with Vue components</h3> <p>Just like Vuex, now you have access to the Vedux store with <code>$store</code> key, here is a simple example of how you can share state amongst 2 components</p> <p><strong>store</strong></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Store</span><span class="token punctuation">(</span><span class="token punctuation">{</span> text<span class="token punctuation">:</span> <span class="token keyword">null</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  store
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span>
+</code></pre></div><p><strong>text component</strong></p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>
+    {{ text }}
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  computed<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p><strong>input component</strong></p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">:value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span> <span class="token attr-name">@input</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>updateText<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  computed<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">updateText</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> textModule <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">module</span><span class="token punctuation">(</span><span class="token string">'text'</span><span class="token punctuation">)</span>
+
+      <span class="token keyword">const</span> newState <span class="token operator">=</span> textModule<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> e<span class="token punctuation">)</span>
+
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newState<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.af381578.js" defer></script><script src="/assets/js/2.0317e6ec.js" defer></script><script src="/assets/js/5.795390b6.js" defer></script>
+  </body>
+</html>

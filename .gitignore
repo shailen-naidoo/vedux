@@ -1,2 +1,5 @@
 node_modules
+docs/node_modules
 build
+.vuepress/dist
+docs/README.md
