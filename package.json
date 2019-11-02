@@ -13,5 +13,8 @@
     "@types/node": "^12.12.5",
     "@types/vue": "^2.0.0",
     "veduxjs": "^0.0.7"
+  },
+  "scripts": {
+    "prepublish": "npx tsc"
   }
 }
