@@ -29,6 +29,7 @@ After you have setup your `store`, you now have access to 3 methods:
 * `getState()` - Clones and returns the current instance of the `state` 
 * `commit()` - Creates and returns a new instance of the state with your new values
 * `module()` - Allows you to create a module from a property on the state
+* `subscribe()` - You can observe changes in the state
 
 #### `getState()`
 
@@ -56,6 +57,18 @@ const counterModule = store.module('counter')
 const { counter } = counterModule.commit(({ counter }) => counter + 5)
 
 console.log(counter) // 5
+```
+
+#### `subscribe()`
+
+```javascript
+store.subscribe(({ oldState, newState }) => {
+  console.log(oldState, newState)
+  // oldState: { counter: 0 }
+  // newState: { counter: 10 }
+})
+
+store.commit(() => ({ counter: 10 }))
 ```
 
 ### Using it with Vue components

@@ -1,9 +1,12 @@
+import { EventEmitter } from 'events'
+
 interface State {
   [x: string]: any;
 }
 
 class Store {
   private state = {}
+  private stateObserver = new EventEmitter()
   constructor(state: State = {}) {
     this.state = state
   }
@@ -13,14 +16,20 @@ class Store {
   }
 
   commit(handler: (state: State) => State): State {
-    const newState = handler(this.getState())
+    const oldState = this.getState()
+    const newState = handler(oldState)
 
     const mergedState = {
-      ...this.getState(),
+      ...oldState,
       ...newState,
     }
 
     this.state = mergedState
+
+    this.stateObserver.emit('subscribe', {
+      old: oldState,
+      new: mergedState
+    })
 
     return mergedState
   }
@@ -40,6 +49,10 @@ class Store {
         return mergedState
       }
     }
+  }
+
+  subscribe(handler: (state: State) => void): void {
+    this.stateObserver.on('subscribe', handler)
   }
 }
 
