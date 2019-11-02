@@ -36,7 +36,7 @@ class Store {
 
   module(key: string) {
     return {
-      commit: (handler: (state: State) => State | number): State => {
+      commit: (handler: (state: State) => any): State => {
         const newState = handler(this.getState())
 
         const mergedState = {
