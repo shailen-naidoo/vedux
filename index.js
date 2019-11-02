@@ -10,7 +10,7 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var Store = /** @class */ (function () {
     function Store(state) {
         if (state === void 0) { state = {}; }
@@ -41,5 +41,5 @@ var Vedux = {
         });
     }
 };
-exports.default = { Store: Store, Vedux: Vedux };
+exports["default"] = { Store: Store, Vedux: Vedux };
 //# sourceMappingURL=index.js.map

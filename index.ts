@@ -1,4 +1,5 @@
 import { VueConstructor } from 'vue'
+import { EventEmitter } from 'events'
 
 interface State {
   [x: string]: any;
@@ -6,6 +7,7 @@ interface State {
 
 class Store {
   private state = {}
+  private stateObserver = new EventEmitter()
   constructor(state: State = {}) {
     this.state = state
   }
@@ -22,9 +24,22 @@ class Store {
       ...newState,
     }
 
+    this.stateObserver.emit('subscribe', {
+      old: this.state,
+      new: mergedState,
+    })
+
     this.state = mergedState
 
     return mergedState
+  }
+
+  subscribe() {
+    return {
+      result: (handler: (state: State) => void) => {
+        this.stateObserver.on('subscribe', handler)
+      }
+    }
   }
 }
 
