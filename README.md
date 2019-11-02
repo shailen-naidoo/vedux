@@ -6,10 +6,12 @@ Vedux is meant to be an alternative to that as there is no such thing as `action
 
 You have full control over your state!
 
+> NOTE: This is just an experiment :)
+
 ### Installation
 
 ```shell
-$ yarn add vedux
+$ yarn add veduxjs
 ```
 
 ```javascript
@@ -34,7 +36,7 @@ new Vue({
 
 ### Setup
 
-After you have setup your `store`, you now have access to 3 methods:
+After you have setup your `store`, you now have access to 4 methods:
 
 * `getState()` - Clones and returns the current instance of the `state` 
 * `commit()` - Creates and returns a new instance of the state with your new values
