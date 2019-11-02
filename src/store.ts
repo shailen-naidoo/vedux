@@ -5,14 +5,29 @@ interface State {
 }
 
 class Store {
+  debug = false
+
   private state = {}
   private stateObserver = new EventEmitter()
-  constructor(state: State = {}) {
+
+  constructor(state: State = {}, { debug = true }: { debug: boolean }) {
     this.state = state
+    this.debug = debug
+
+    if (this.debug) {
+      console.log(`Initialized Store: [${new Date()}]\n`)
+      console.log(`Initial State\n`)
+      console.log(JSON.stringify(this.state, null, 2))
+      console.log('\n')
+    }
   }
 
   getState(objKeys?: string): State {
     const state = { ...this.state }
+
+    if (this.debug) {
+      console.log(`State was accessed ${objKeys ? `with ["${objKeys}"]` : ''} at [${new Date()}]`)
+    }
 
     if (objKeys) {
       // @ts-ignore
