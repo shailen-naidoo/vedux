@@ -1,6 +1,6 @@
 # Vedux
 
-Is an ultra lightweight centralized state management library that is just under  _27 lines_
+A ultra-lightweight state management library for Vue.js, it just does enough to help you manage state without locking you in
 
 ### Installation
 
@@ -22,16 +22,26 @@ import { Store } from 'veduxjs'
 
 const store = new Store({ counter: 0 })
 ```
+After you have setup your `store`, you now have access to 3 methods:
 
-Here we created an instance of the `Store` with a property of `counter`, we cannot mutate state, we can only derive new state from it. Like this
+* `getState()` - Clones and returns the current instance of the `state` 
+* `commit()` - Creates and returns a new instance of the state with your new values
+* `module()` - Allows you to create a module from a property on the state
+
+#### `getState()`
 
 ```javascript
-store.state.counter = 10 // won't work
+const cloneOfTheState = store.getState()
 
-const currentState = store.getState()
-
-const newState = store.commit(({ counter }) => ({ counter: counter + 1 }))
-
-console.log(currentStateState) // { counter: 0 }
-console.log(newState) // { counter: 1 }
+cloneOfTheState.counter = 10 // Will mutate the cloned state not the original state
 ```
+
+#### `commit()`
+
+```javascript
+const { counter: currentCounter } = store.getState() // currentCounter: 0
+
+const { counter: newCounter } = store.commit(({ counter }) => ({ 
+  counter: counter + 5
+})) // newCounter: 5
+``` 
