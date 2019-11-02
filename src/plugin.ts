@@ -30,4 +30,9 @@ const Vedux = {
   }
 }
 
+if (window) {
+  // @ts-ignore
+  window.VeduxPlugin = Vedux
+}
+
 export { Vedux }
