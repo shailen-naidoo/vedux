@@ -46,7 +46,7 @@ const cloneOfTheState = store.getState()
 
 const cloneOfTheState = store.getState('form')
 
-// cloneOfTheState: { form: { email: null, name: null } }
+// cloneOfTheState: { email: null, name: null }
 
 const cloneOfTheState = store.getState('form.email')
 
