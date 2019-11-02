@@ -7,6 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "events": "^3.0.0",
+    "husky": "^3.0.9",
     "typescript": "^3.6.4",
     "vue": "^2.6.10"
   },
@@ -17,5 +18,10 @@
   },
   "scripts": {
     "prepublish": "npx tsc"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "cp ./README.md ./docs/README.md"
+    }
   }
 }
