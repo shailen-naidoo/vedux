@@ -11,7 +11,7 @@ You have full control over your state!
 ### Installation
 
 ```shell
-$ yarn add vedux
+$ yarn add veduxjs
 ```
 
 ```javascript
