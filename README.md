@@ -10,18 +10,20 @@ $ yarn add vedux
 
 ```javascript
 import Vue from 'vue'
-import { Vedux } from 'veduxjs'
+import { Vedux, Store } from 'veduxjs'
 
 Vue.use(Vedux)
+
+const store = new Store({ counter: 0 })
+
+new Vue({
+  store,
+}).$mount('#app')
+
 ```
 
 ### Setup
 
-```javascript
-import { Store } from 'veduxjs'
-
-const store = new Store({ counter: 0 })
-```
 After you have setup your `store`, you now have access to 3 methods:
 
 * `getState()` - Clones and returns the current instance of the `state` 
@@ -45,3 +47,69 @@ const { counter: newCounter } = store.commit(({ counter }) => ({
   counter: counter + 5
 })) // newCounter: 5
 ``` 
+
+#### `module()`
+
+```javascript
+const counterModule = store.module('counter')
+
+const { counter } = counterModule.commit(({ counter }) => counter + 5)
+
+console.log(counter) // 5
+```
+
+### Using it with Vue components
+
+Just like Vuex, now you have access to the Vedux store with `$store` key, here is a simple example of how you can share state amongst 2 components
+
+**store**
+
+```javascript
+const store = new Store({ text: null })
+
+new Vue({
+  store
+}).$mount('#app')
+```
+**text component**
+```vue
+<template>
+  <p>
+    {{ text }}
+  </p>
+</template>
+
+<script>
+export default {
+  computed: {
+    text() {
+      return this.$store.getState().text
+    }
+  }
+}
+</script>
+```
+**input component**
+
+```vue
+<template>
+  <input :value="text" @input="updateText" type="text">
+</template>
+
+<script>
+export default {
+  computed: {
+    text() {
+      return this.$store.getState().text
+    }
+  },
+  methods: {
+    updateText(e) {
+      const { text } = this.$store.commit(() => ({ text: e }))
+
+      console.log(text)
+    }
+  }
+}
+</script>
+```
