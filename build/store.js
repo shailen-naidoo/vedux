@@ -43,17 +43,3 @@ var Store = /** @class */ (function () {
     return Store;
 }());
 exports.Store = Store;
-var Vedux = {
-    install: function (vue) {
-        vue.mixin({
-            beforeCreate: function () {
-                // @ts-ignore
-                var store = this.$options.store;
-                this.$options.data = {
-                    store: store
-                };
-            }
-        });
-    }
-};
-exports.Vedux = Vedux;

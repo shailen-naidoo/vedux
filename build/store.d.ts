@@ -1,4 +1,3 @@
-import { VueConstructor } from 'vue';
 interface State {
     [x: string]: any;
 }
@@ -12,7 +11,4 @@ declare class Store {
         result: (handler: (state: State) => void) => void;
     };
 }
-declare const Vedux: {
-    install(vue: VueConstructor<import("vue").default>): void;
-};
-export { Store, Vedux };
+export { Store };

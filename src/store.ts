@@ -1,4 +1,3 @@
-import { VueConstructor } from 'vue'
 import { EventEmitter } from 'events'
 
 interface State {
@@ -43,19 +42,4 @@ class Store {
   }
 }
 
-const Vedux = {
-  install(vue: VueConstructor) {
-    vue.mixin({
-      beforeCreate() {
-        // @ts-ignore
-        const { store } = this.$options
-        
-        this.$options.data = {
-          store
-        }
-      }
-    })
-  }
-}
-
-export { Store, Vedux }
+export { Store }
