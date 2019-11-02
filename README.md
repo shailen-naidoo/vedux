@@ -6,6 +6,8 @@ Vedux is meant to be an alternative to that as there is no such thing as `action
 
 You have full control over your state!
 
+> NOTE: This is just an experiment :)
+
 ### Installation
 
 ```shell
