@@ -58,4 +58,4 @@ const Vedux = {
   }
 }
 
-export default { Store, Vedux }
+export { Store, Vedux }

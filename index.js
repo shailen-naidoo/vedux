@@ -42,6 +42,7 @@ var Store = /** @class */ (function () {
     };
     return Store;
 }());
+exports.Store = Store;
 var Vedux = {
     install: function (vue) {
         vue.mixin({
@@ -55,4 +56,4 @@ var Vedux = {
         });
     }
 };
-exports.default = { Store: Store, Vedux: Vedux };
+exports.Vedux = Vedux;
