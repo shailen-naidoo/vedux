@@ -24,6 +24,15 @@ typescript@^3.6.4:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.6.4.tgz#b18752bb3792bc1a0281335f7f6ebf1bbfc5b91d"
   integrity sha512-unoCll1+l+YK4i4F8f22TaNVPRHcD9PA3yCuZ8g5e0qGqlVlJ/8FSateOLLSagn+Yg5+ZwuPkL8LFUc0Jcvksg==
 
+veduxjs@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/veduxjs/-/veduxjs-0.0.7.tgz#ac82cf39680d8e9da89aeeca02dcc26fc892dff0"
+  integrity sha512-AElocCnoNmrjph9HuLMfpD4HX0LmpzmJ6C5cIvEhhZZdlK3JZvFNsLXWJNY3EjIBC/sFI2Egm72SsTc5QQoqjw==
+  dependencies:
+    events "^3.0.0"
+    typescript "^3.6.4"
+    vue "^2.6.10"
+
 vue@*, vue@^2.6.10:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
