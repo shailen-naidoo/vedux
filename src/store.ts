@@ -44,10 +44,11 @@ class Store {
   module(key: string) {
     return {
       commit: (handler: (state: State) => any): State => {
-        const newState = handler(this.getState())
+        const oldState = this.getState()
+        const newState = handler(oldState)
 
         const mergedState = {
-          ...this.getState(),
+          ...oldState,
           [key]: newState
         }
 
