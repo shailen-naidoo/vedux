@@ -11,8 +11,15 @@ class Store {
     this.state = state
   }
 
-  getState(): State {
-    return { ...this.state }
+  getState(objKeys?: string): State {
+    const state = { ...this.state }
+
+    if (objKeys) {
+      // @ts-ignore
+      return objKeys.split('.').reduce((result, key) => result[key], state)
+    }
+
+    return state
   }
 
   commit(handler: (state: State) => State): State {

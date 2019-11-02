@@ -14,7 +14,13 @@ import { Vedux, Store } from 'veduxjs'
 
 Vue.use(Vedux)
 
-const store = new Store({ counter: 0 })
+const store = new Store({ 
+  counter: 0, 
+  form: {
+    email: null,
+    name: null,
+  },
+})
 
 new Vue({
   store,
@@ -36,7 +42,15 @@ After you have setup your `store`, you now have access to 3 methods:
 ```javascript
 const cloneOfTheState = store.getState()
 
-cloneOfTheState.counter = 10 // Will mutate the cloned state not the original state
+// cloneOfTheState: { counter: 0, form: { email: null, name: null } }
+
+const cloneOfTheState = store.getState('form')
+
+// cloneOfTheState: { form: { email: null, name: null } }
+
+const cloneOfTheState = store.getState('form.email')
+
+// cloneOfTheState: null
 ```
 
 #### `commit()`
