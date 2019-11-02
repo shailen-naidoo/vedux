@@ -116,7 +116,7 @@ new Vue({
 export default {
   computed: {
     text() {
-      return this.$store.getState().text
+      return this.$store.getState('text')
     }
   }
 }
@@ -133,7 +133,7 @@ export default {
 export default {
   computed: {
     text() {
-      return this.$store.getState().text
+      return this.$store.getState('text')
     }
   },
   methods: {
