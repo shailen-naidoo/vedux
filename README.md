@@ -1,8 +1,8 @@
 # Vedux
 
-A ultra-lightweight state management library for Vue.js, it just does enough to help you manage state without locking you in. The issue with Vuex is that it's hard not to put your business logic into it so if you wanted to changed framework your business logic ends up stuck in there with all the conventions of Vuex.
+A ultra-lightweight state management library for Vue.js, it just does enough to help you manage state without locking you in.
 
-Vedux is meant to be an alternative to that as there is no such thing as `actions`, `mutations` or `getters`, you only have `state` that only gets mutated/accessed via the `commit()` and `getState()` functions. That's about it :)
+Vedux is meant to be an alternative to Vuex as there is no such thing as `actions`, `mutations` or `getters`, you only have `state` that only gets mutated/accessed via the `commit()` and `getState()` functions. That's about it :)
 
 You have full control over your state!
 
