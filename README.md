@@ -57,6 +57,10 @@ const cloneOfTheState = store.getState('form')
 const cloneOfTheState = store.getState('form.email')
 
 // cloneOfTheState: null
+
+const cloneOfTheState = store.getState(['form', 'email'])
+
+// cloneOfTheState: null
 ```
 
 #### `commit()`

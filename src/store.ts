@@ -4,15 +4,19 @@ interface State {
   [x: string]: any;
 }
 
+interface Config {
+  debug: boolean
+}
+
 class Store {
   debug = false
 
   private state = {}
   private stateObserver = new EventEmitter()
 
-  constructor(state: State = {}, { debug = true }: { debug: boolean }) {
+  constructor(state: State = {}, config?: Config) {
     this.state = state
-    this.debug = debug
+    this.debug = config ? config.debug : false
 
     if (this.debug) {
       console.log(`Initialized Store: [${new Date()}]\n`)
@@ -22,11 +26,15 @@ class Store {
     }
   }
 
-  getState(objKeys?: string): State {
-    const state = { ...this.state }
+  getState(objKeys?: string | string[]): State {
+    const state: State = { ...this.state }
 
     if (this.debug) {
       console.log(`State was accessed ${objKeys ? `with ["${objKeys}"]` : ''} at [${new Date()}]`)
+    }
+
+    if (Array.isArray(objKeys)) {
+      return objKeys.reduce((result, key) => result[key], state)
     }
 
     if (objKeys) {
@@ -38,8 +46,8 @@ class Store {
   }
 
   commit(handler: (state: State) => State): State {
-    const oldState = this.getState()
-    const newState = handler(oldState)
+    const oldState: State = this.getState()
+    const newState: State = handler(oldState)
 
     const mergedState = {
       ...oldState,
@@ -59,8 +67,8 @@ class Store {
   module(key: string) {
     return {
       commit: (handler: (state: State) => any): State => {
-        const oldState = this.getState()
-        const newState = handler(oldState)
+        const oldState: State = this.getState()
+        const newState: State = handler(oldState)
 
         const mergedState = {
           ...oldState,
