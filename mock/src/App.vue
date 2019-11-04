@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="(x) in new Array(10)" :key="x" style="display: flex; justify-content: space-between;">
+    <div v-for="(x) in new Array(1)" :key="x" style="display: flex; justify-content: space-between;">
       <Viewer v-for="(i) in new Array(50)" :key="i" />
     </div>
     <input v-model="text" />

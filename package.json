@@ -6,7 +6,6 @@
   "author": "shailen <shailen@lumkani.com>",
   "license": "MIT",
   "dependencies": {
-    "events": "^3.0.0",
     "typescript": "^3.6.4",
     "vue": "^2.6.10"
   },
