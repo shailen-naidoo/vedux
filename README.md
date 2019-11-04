@@ -38,10 +38,10 @@ new Vue({
 
 After you have setup your `store`, you now have access to 4 methods:
 
-* `getState()` - Clones and returns the current instance of the `state` 
-* `commit()` - Creates and returns a new instance of the state with your new values
-* `module()` - Allows you to create a module from a property on the state
-* `subscribe()` - You can observe changes in the state
+* [`getState()`](#getstate) - Clones and returns the current instance of the `state` 
+* [`commit()`](#commit) - Creates and returns a new instance of the state with your new values
+* [`module()`](#module) - Allows you to create a module from a property on the state
+* [`subscribe()`](#subscribe) - You can observe changes in the state
 
 #### `getState()`
 

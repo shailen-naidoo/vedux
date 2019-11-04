@@ -30,7 +30,7 @@ class Store {
     const state: State = { ...this.state }
 
     if (this.debug) {
-      console.log(`State was accessed ${objKeys ? `with ["${objKeys}"]` : ''} at [${new Date()}]`)
+      console.log(`State was accessed ${objKeys ? `with ["${Array.isArray(objKeys) ? objKeys.join('.') : objKeys}"]` : ''} at [${new Date()}]`)
     }
 
     if (Array.isArray(objKeys)) {
@@ -38,7 +38,6 @@ class Store {
     }
 
     if (objKeys) {
-      // @ts-ignore
       return objKeys.split('.').reduce((result, key) => result[key], state)
     }
 
