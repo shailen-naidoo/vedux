@@ -12,6 +12,7 @@
   "devDependencies": {
     "@types/node": "^12.12.5",
     "@types/vue": "^2.0.0",
+    "ts-node": "^8.4.1",
     "veduxjs": "^0.0.20"
   },
   "scripts": {
