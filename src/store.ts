@@ -1,3 +1,5 @@
+import Vue from 'vue'
+
 interface State {
   [x: string]: any;
 }
@@ -12,7 +14,7 @@ class Store {
   private state = {}
 
   constructor(state: State = {}, config?: Config) {
-    this.state = state
+    this.state = Vue.observable(state)
     this.debug = config ? config.debug : false
 
     if (this.debug) {
