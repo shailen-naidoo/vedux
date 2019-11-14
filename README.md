@@ -84,7 +84,7 @@ console.log(counter) // 5
 Just like Vuex, now you have access to the Vedux store with `$store` key, here is a simple example of how you can share state amongst 2 components
 
 :::tip
-Vedux use `Vue.observable` under the hood
+Vedux uses `Vue.observable` under the hood
 :::
 
 **store**
