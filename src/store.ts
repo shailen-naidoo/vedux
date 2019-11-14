@@ -77,11 +77,3 @@ class Store {
 }
 
 export { Store }
-
-const store = new Store({
-  count: 0,
-})
-
-store.commit(() => ({ count: 1 }))
-
-console.log(store.getState())
