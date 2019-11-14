@@ -18,8 +18,6 @@ $ yarn add veduxjs
 import Vue from 'vue'
 import { Vedux, Store } from 'veduxjs'
 
-Vue.use(Vedux)
-
 const store = new Store({ 
   counter: 0, 
   form: {
@@ -28,8 +26,10 @@ const store = new Store({
   },
 })
 
+Vue.use(Vedux, { store })
+
 new Vue({
-  store,
+  el: '#app'
 }).$mount('#app')
 
 ```
