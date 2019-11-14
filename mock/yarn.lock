@@ -7355,12 +7355,11 @@ vary@~1.1.2:
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
 
-veduxjs@^0.0.21:
-  version "0.0.21"
-  resolved "https://registry.yarnpkg.com/veduxjs/-/veduxjs-0.0.21.tgz#a547f6878134d99eaadc1592b64de8f752afc0bc"
-  integrity sha512-Z2t7++gUNWA0AaqPdqv0VPS6Ei+Mv8TieRkAxIP11YilxFpY9ic0bHFsbOUHSFFPZUmyLiMW/A+75qhLGWyK+w==
+veduxjs@^0.0.26:
+  version "0.0.26"
+  resolved "https://registry.yarnpkg.com/veduxjs/-/veduxjs-0.0.26.tgz#8639e85f9a29d62179bcfa7a648f81d3cc445bb7"
+  integrity sha512-uUgPh0SqroSBBTdVBPRN5cjNGAEKjic01RQc5IzBi5DKr/ZQj30rxLRdrJb8EOaMhGJkEMsh/jqOXDqicVMR0g==
   dependencies:
-    events "^3.0.0"
     typescript "^3.6.4"
     vue "^2.6.10"
 

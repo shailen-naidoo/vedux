@@ -17,7 +17,7 @@ export default {
   computed: {
     text: {
       get() {
-        return this.$store.state.state.text
+        return this.$store.getState('text')
       },
       set(e) {
         this.$store.commit(() => ({ text: e }))
