@@ -17,12 +17,10 @@ export default {
   computed: {
     text: {
       get() {
-        return this.$store.getState('text')
+        return this.$store.state.state.text
       },
       set(e) {
-        const textModule = this.$store.module('text')
-
-        textModule.commit(() => e)
+        this.$store.commit(() => ({ text: e }))
       }
     }
   }

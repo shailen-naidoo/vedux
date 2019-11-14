@@ -1,12 +1,12 @@
 <template>
-  <p @click="updateText">{{ $store.state.text }}</p>
+  <p>{{ text }}</p>
 </template>
 
 <script>
 export default {
-  methods: {
-    updateText() {
-      this.$store.commit(() => ({ text: null }))
+  computed: {
+    text() {
+      return this.$store.getState('text')
     }
   }
 }
