@@ -11,10 +11,10 @@ interface Config {
 class Store {
   debug = false
 
-  private state = {}
+  private state = { state: {} }
 
   constructor(state: State = {}, config?: Config) {
-    this.state = Vue.observable(state)
+    this.state = Vue.observable({ state })
     this.debug = config ? config.debug : false
 
     if (this.debug) {
@@ -26,7 +26,7 @@ class Store {
   }
 
   getState(objKeys?: string | string[]): State {
-    const state: State = { ...this.state }
+    const state: State = { ...this.state.state }
 
     if (this.debug) {
       console.log(`State was accessed ${objKeys ? `with ["${Array.isArray(objKeys) ? objKeys.join('.') : objKeys}"]` : ''} at [${new Date()}]`)
@@ -52,7 +52,7 @@ class Store {
       ...newState,
     }
 
-    this.state = mergedState
+    this.state.state = mergedState
 
     return mergedState
   }
@@ -68,7 +68,7 @@ class Store {
           [key]: newState
         }
 
-        this.state = mergedState
+        this.state.state = mergedState
 
         return mergedState
       }
@@ -77,3 +77,11 @@ class Store {
 }
 
 export { Store }
+
+const store = new Store({
+  count: 0,
+})
+
+store.commit(() => ({ count: 1 }))
+
+console.log(store.getState())
