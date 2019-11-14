@@ -1,3 +1,8 @@
+---
+title: VeduxJS
+description: A ultra-lightweight state management library for Vue.js, it just does enough to help you manage state without locking you in.
+---
+
 # Vedux
 
 A ultra-lightweight state management library for Vue.js, it just does enough to help you manage state without locking you in.
