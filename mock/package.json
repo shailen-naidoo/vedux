@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "core-js": "^3.3.2",
-    "veduxjs": "^0.0.27",
+    "veduxjs": "^0.0.29",
     "vue": "^2.6.10",
     "vuex": "^3.1.1"
   },
