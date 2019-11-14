@@ -129,12 +129,10 @@ export default {
     }
   },
   methods: {
-    updateText(e) {
+    updateText(newText) {
       const textModule = this.$store.module('text')
 
-      const newState = textModule.commit(() => e)
-
-      console.log(newState)
+      textModule.commit(() => newText)
     }
   }
 }
