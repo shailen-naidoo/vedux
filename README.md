@@ -28,10 +28,7 @@ const store = new Store({
 
 Vue.use(Vedux, { store })
 
-new Vue({
-  el: '#app'
-}).$mount('#app')
-
+new Vue({}).$mount('#app')
 ```
 
 ### Setup
@@ -91,9 +88,9 @@ Just like Vuex, now you have access to the Vedux store with `$store` key, here i
 ```javascript
 const store = new Store({ text: null })
 
-new Vue({
-  store
-}).$mount('#app')
+Vue.use(Vedux, { store })
+
+new Vue({}).$mount('#app')
 ```
 **text component**
 ```vue
