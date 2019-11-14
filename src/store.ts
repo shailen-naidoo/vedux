@@ -1,3 +1,5 @@
+import Vue from 'vue'
+
 interface State {
   [x: string]: any;
 }
@@ -9,22 +11,22 @@ interface Config {
 class Store {
   debug = false
 
-  private state = {}
+  private root = { state: {} }
 
   constructor(state: State = {}, config?: Config) {
-    this.state = state
+    this.root = Vue.observable({ state })
     this.debug = config ? config.debug : false
 
     if (this.debug) {
       console.log(`Initialized Store: [${new Date()}]\n`)
       console.log(`Initial State\n`)
-      console.log(JSON.stringify(this.state, null, 2))
+      console.log(JSON.stringify(this.root.state, null, 2))
       console.log('\n')
     }
   }
 
   getState(objKeys?: string | string[]): State {
-    const state: State = { ...this.state }
+    const state: State = { ...this.root.state }
 
     if (this.debug) {
       console.log(`State was accessed ${objKeys ? `with ["${Array.isArray(objKeys) ? objKeys.join('.') : objKeys}"]` : ''} at [${new Date()}]`)
@@ -50,7 +52,7 @@ class Store {
       ...newState,
     }
 
-    this.state = mergedState
+    this.root.state = mergedState
 
     return mergedState
   }
@@ -66,7 +68,7 @@ class Store {
           [key]: newState
         }
 
-        this.state = mergedState
+        this.root.state = mergedState
 
         return mergedState
       }

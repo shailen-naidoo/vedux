@@ -7155,11 +7155,6 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@^3.6.4:
-  version "3.6.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.6.4.tgz#b18752bb3792bc1a0281335f7f6ebf1bbfc5b91d"
-  integrity sha512-unoCll1+l+YK4i4F8f22TaNVPRHcD9PA3yCuZ8g5e0qGqlVlJ/8FSateOLLSagn+Yg5+ZwuPkL8LFUc0Jcvksg==
-
 uglify-js@3.4.x:
   version "3.4.10"
   resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.4.10.tgz#9ad9563d8eb3acdfb8d38597d2af1d815f6a755f"
@@ -7355,13 +7350,11 @@ vary@~1.1.2:
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
 
-veduxjs@^0.0.21:
-  version "0.0.21"
-  resolved "https://registry.yarnpkg.com/veduxjs/-/veduxjs-0.0.21.tgz#a547f6878134d99eaadc1592b64de8f752afc0bc"
-  integrity sha512-Z2t7++gUNWA0AaqPdqv0VPS6Ei+Mv8TieRkAxIP11YilxFpY9ic0bHFsbOUHSFFPZUmyLiMW/A+75qhLGWyK+w==
+veduxjs@^0.0.29:
+  version "0.0.29"
+  resolved "https://registry.yarnpkg.com/veduxjs/-/veduxjs-0.0.29.tgz#47887b5e9392e7fbb9b7666f0e0df5654ef86e25"
+  integrity sha512-htpM2ysQ+TeULZe2KIP1kcL6Dqx0Wr4wkKSWZoIDbjr+AC5X/l6HQmEzgiUvBHbIRMDM4Z684MoLw2AUalJQNw==
   dependencies:
-    events "^3.0.0"
-    typescript "^3.6.4"
     vue "^2.6.10"
 
 vendors@^1.0.0:

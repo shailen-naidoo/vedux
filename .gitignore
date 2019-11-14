@@ -4,3 +4,4 @@ build
 docs/.vuepress/dist
 docs/README.md
 mock/node_modules
+.vscode

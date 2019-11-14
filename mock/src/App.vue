@@ -20,9 +20,7 @@ export default {
         return this.$store.getState('text')
       },
       set(e) {
-        const textModule = this.$store.module('text')
-
-        textModule.commit(() => e)
+        this.$store.commit(() => ({ text: e }))
       }
     }
   }

@@ -1,32 +1,8 @@
-import { VueConstructor } from "vue"
+import { Store } from './store'
 
 const Vedux = {
-	install(vue: any) {
-  	vue.mixin({
-    	beforeCreate() {
-      	const { store: rootStore } = this.$options
-
-        if (rootStore) {
-          vue.prototype.$store = rootStore
-        }
-
-        const isDataFn = typeof this.$options.data === 'function'
-
-        if (isDataFn) {
-          const data = this.$options.data.apply(this)
-
-          this.$options.data = {
-            ...data,
-            store: vue.prototype.$store,
-          }
-        } else {
-          this.$options.data = {
-            ...this.$options.data,
-            store: vue.prototype.$store,
-          }
-        }
-      }
-    })
+	install(vue: any, { store }: { store: Store }) {
+  	vue.prototype.$store = store
   }
 }
 
