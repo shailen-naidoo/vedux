@@ -59,7 +59,7 @@ class Store {
 
   module(key: string) {
     return {
-      commit: (handler: (state: State) => any): State => {
+      setState: (handler: (state: State) => any): State => {
         const oldState: State = this.getState()
         const newState: State = handler(oldState)
 
