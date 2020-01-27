@@ -43,7 +43,7 @@ class Store {
     return state
   }
 
-  commit(handler: ((state: State) => State) | State): State {
+  setState(handler: ((state: State) => State) | State): State {
     const oldState: State = this.getState()
     const newState: State = typeof handler === 'function' ? handler(oldState) : handler
 

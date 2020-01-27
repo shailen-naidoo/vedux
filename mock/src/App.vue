@@ -20,16 +20,6 @@ export default {
 
     }
   },
-  ViewModel, 
-  // computed: {
-  //   text: {
-  //     get() {
-  //       return this.$store.getState('text')
-  //     },
-  //     set(e) {
-  //       this.$store.commit(() => ({ text: e }))
-  //     }
-  //   }
-  // }
+  ViewModel,
 }
 </script>
