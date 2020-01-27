@@ -7,7 +7,7 @@ description: A ultra-lightweight state management library for Vue.js, it just do
 
 A ultra-lightweight state management library for Vue.js, it just does enough to help you manage state without locking you in.
 
-Vedux is meant to be an alternative to Vuex as there is no such thing as `actions`, `mutations` or `getters`, you only have `state` that only gets mutated/accessed via the `commit()` and `getState()` functions. That's about it :)
+Vedux is meant to be an alternative to Vuex as there is no such thing as `actions`, `mutations` or `getters`, you only have `state` that only gets mutated/accessed via the `setState()` and `getState()` functions. That's about it :)
 
 You have full control over your state!
 
@@ -23,7 +23,7 @@ $ yarn add veduxjs
 import Vue from 'vue'
 import { Vedux, Store } from 'veduxjs'
 
-const store = new Store({ 
+const store = new Store({
   counter: 0, 
   form: {
     email: null,
@@ -41,7 +41,7 @@ new Vue({}).$mount('#app')
 After you have setup your `store`, you now have access to 4 methods:
 
 * [`getState()`](#getstate) - Clones and returns the current instance of the `state` 
-* [`commit()`](#commit) - Creates and returns a new instance of the state with your new values
+* [`setState()`](#setState) - Creates and returns a new instance of the state with your new values
 * [`module()`](#module) - Allows you to create a module from a property on the state
 
 #### `getState()`
@@ -64,12 +64,12 @@ const cloneOfTheState = store.getState(['form', 'email'])
 // cloneOfTheState: null
 ```
 
-#### `commit()`
+#### `setState()`
 
 ```javascript
 const { counter: currentCounter } = store.getState() // currentCounter: 0
 
-const { counter: newCounter } = store.commit(({ counter }) => ({ 
+const { counter: newCounter } = store.setState(({ counter }) => ({ 
   counter: counter + 5
 })) // newCounter: 5
 ``` 
@@ -79,7 +79,7 @@ const { counter: newCounter } = store.commit(({ counter }) => ({
 ```javascript
 const counterModule = store.module('counter')
 
-const { counter } = counterModule.commit(({ counter }) => counter + 5)
+const { counter } = counterModule.setState(({ counter }) => counter + 5)
 
 console.log(counter) // 5
 ```
@@ -137,7 +137,7 @@ export default {
     updateText(newText) {
       const textModule = this.$store.module('text')
 
-      textModule.commit(() => newText)
+      textModule.setState(() => newText)
     }
   }
 }
