@@ -10,6 +10,6 @@ export class AppViewModel {
   }
 
   static methods = {
-    updateText: (vm, e) => store.commit({ text: e })
+    updateText: (vm, e) => store.setState({ text: e })
   }
 }

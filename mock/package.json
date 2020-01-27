@@ -9,7 +9,7 @@
   "dependencies": {
     "@lumkani/view-model-api": "^2.2.0",
     "core-js": "^3.3.2",
-    "veduxjs": "^0.1.0",
+    "veduxjs": "^0.1.1",
     "vue": "^2.6.10",
     "vuex": "^3.1.1"
   },

@@ -7238,10 +7238,10 @@ vary@~1.1.2:
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
 
-veduxjs@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/veduxjs/-/veduxjs-0.1.0.tgz#085c0103a5140efddd558d513571a40ec5b60679"
-  integrity sha512-vULCN49rFdgyBpGeA+hWxcstJMpkVYjaGInFS7oJuvjhqFg7XgRQrDXbN2yYwxC2wwCSOyH9Q0kq5KCR+xi8Ew==
+veduxjs@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/veduxjs/-/veduxjs-0.1.1.tgz#80603afd5897dd5717f2843061f0b32978a70fb3"
+  integrity sha512-g23qg/ckTJ3m5Bd2hOumE882cQ93tWzvo8ePXMyh+qnxReSUDa2dH6CMKGtxg3BIgAMasE7aoowsgb4IEK6oqg==
   dependencies:
     vue "^2.6.10"
 
