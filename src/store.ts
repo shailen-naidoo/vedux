@@ -43,9 +43,9 @@ class Store {
     return state
   }
 
-  commit(handler: (state: State) => State): State {
+  commit(handler: ((state: State) => State) | State): State {
     const oldState: State = this.getState()
-    const newState: State = handler(oldState)
+    const newState: State = typeof handler === 'function' ? handler(oldState) : handler
 
     const mergedState = {
       ...oldState,
