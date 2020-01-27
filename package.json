@@ -1,6 +1,6 @@
 {
   "name": "veduxjs",
-  "version": "0.0.30",
+  "version": "0.1.0",
   "main": "build/index.js",
   "repository": "git@github.com:ShailenNaidoo/vedux.git",
   "author": "shailen <shailen@lumkani.com>",
