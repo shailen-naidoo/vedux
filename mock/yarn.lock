@@ -746,6 +746,13 @@
     cssnano-preset-default "^4.0.0"
     postcss "^7.0.0"
 
+"@lumkani/view-model-api@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@lumkani/view-model-api/-/view-model-api-2.2.0.tgz#e81ad6edf920614ca5b89944a0d637c124a03a79"
+  integrity sha512-C7f2abvAVw/ERfX4qiA8NEtGCIrZkCq0/5TqB69nWEhqWPzlkQ354pPNU7MoYUN94fXsmcSW1fhOUPLT8rRMWw==
+  dependencies:
+    vuex "^3.1.2"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -7422,6 +7429,11 @@ vuex@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.1.1.tgz#0c264bfe30cdbccf96ab9db3177d211828a5910e"
   integrity sha512-ER5moSbLZuNSMBFnEBVGhQ1uCBNJslH9W/Dw2W7GZN23UQA69uapP5GTT9Vm8Trc0PzBSVt6LzF3hGjmv41xcg==
+
+vuex@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.1.2.tgz#a2863f4005aa73f2587e55c3fadf3f01f69c7d4d"
+  integrity sha512-ha3jNLJqNhhrAemDXcmMJMKf1Zu4sybMPr9KxJIuOpVcsDQlTBYLLladav2U+g1AvdYDG5Gs0xBTb0M5pXXYFQ==
 
 watchpack@^1.6.0:
   version "1.6.0"
