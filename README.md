@@ -50,15 +50,21 @@ After you have setup your `store`, you now have access to 4 methods:
 const cloneOfTheState = store.getState()
 
 // cloneOfTheState: { counter: 0, form: { email: null, name: null } }
+```
 
+```javascript
 const cloneOfTheState = store.getState('form')
 
 // cloneOfTheState: { email: null, name: null }
+```
 
+```javascript
 const cloneOfTheState = store.getState('form.email')
 
 // cloneOfTheState: null
+```
 
+```javascript
 const cloneOfTheState = store.getState(['form', 'email'])
 
 // cloneOfTheState: null
